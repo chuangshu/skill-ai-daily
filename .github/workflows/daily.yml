@@ -1,33 +1,71 @@
-name: Daily Reddit AI Digest
+name: Daily Skills Digest
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 9 * * *'  # 每天 17:00 UTC+8
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  fetch-and-update:
+  generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
-      
-      - name: Fetch Reddit
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Generate daily report
         run: |
-          pip install requests
-          python3 scripts/fetch_reddit.py
-      
-      - name: Generate Daily
-        run: python3 scripts/generate_daily.py
-      
-      - name: Commit and Push
+          python scripts/fetch_trending.py
+
+      - name: Commit and push
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add daily/ data/
-          git commit -m "📰 Update $(date +%Y-%m-%d)" || echo "No changes"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status || true
+          if [[ $(git diff --cached --stat) != "0" ]]; then
+            git commit -m "📊 Update $(date +%Y-%m-%d)" && git push
+          else
+            echo "No changes to commit"
+          fi
+
+  deploy:
+    needs: generate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: dist
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,20 +2,170 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Reddit AI 情报 - 2026-02-04</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Trending Skills - 2026-02-04</title>
     <style>
-        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .post { border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 8px; }
-        .title { font-size: 18px; color: #1a1a1b; }
-        .meta { color: #878a8c; font-size: 12px; margin-top: 5px; }
-        .highlight { background: #f8f9fa; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #58a6ff; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #8b949e; margin-bottom: 30px; }
+        .date-badge { background: #238636; color: white; padding: 3px 10px; border-radius: 20px; font-size: 14px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #f0f6fc; border-bottom: 2px solid #30363d; padding-bottom: 10px; margin-bottom: 15px; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 15px; margin-bottom: 12px; transition: transform 0.2s; }
+        .card:hover { transform: translateX(5px); border-color: #58a6ff; }
+        .rank { display: inline-block; background: #1f6feb; color: white; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-weight: bold; margin-right: 12px; font-size: 14px; }
+        .title { font-size: 18px; color: #58a6ff; text-decoration: none; font-weight: 600; }
+        .title:hover { text-decoration: underline; }
+        .desc { color: #8b949e; margin: 8px 0; font-size: 14px; line-height: 1.5; }
+        .meta { display: flex; gap: 15px; font-size: 12px; color: #8b949e; flex-wrap: wrap; }
+        .meta span { display: flex; align-items: center; gap: 4px; }
+        .stars { color: #e3b341; }
+        .tag { background: #21262d; padding: 2px 8px; border-radius: 4px; font-size: 11px; }
+        .hot { border-left: 3px solid #f85149; }
+        .stats { background: #21262d; padding: 15px; border-radius: 8px; margin-bottom: 30px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 15px; }
+        .stat-item { text-align: center; }
+        .stat-num { font-size: 24px; font-weight: bold; color: #58a6ff; }
+        .stat-label { font-size: 12px; color: #8b949e; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #30363d; color: #8b949e; font-size: 13px; }
+        a { color: #58a6ff; }
     </style>
 </head>
 <body>
-    <h1>⚡ Reddit AI 情报 - 2026-02-04</h1>
-    <p>数据来源：r/artificial, r/MachineLearning, r/OpenAI</p>
-    <hr>
-    <!-- 帖子内容将由 fetch 脚本填充 -->
-    <p>今日暂无热门帖子数据</p>
+    <h1>GitHub Trending Skills</h1>
+    <p class="subtitle"><span class="date-badge">2026-02-04</span> 每日精选热门项目</p>
+
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-num">10</div>
+            <div class="stat-label">精选项目</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">354K</div>
+            <div class="stat-label">总 Stars</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">5</div>
+            <div class="stat-label">分类</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔥 热门项目 TOP 10</h2>
+
+        <div class="card hot">
+            <span class="rank">1</span>
+            <a href="https://github.com/langchain-ai/langchain" class="title">langchain</a>
+            <p class="desc">Building applications with LLMs through composability</p>
+            <div class="meta">
+                <span class="stars">⭐ 99,000</span>
+                <span class="lang-python">Python</span>
+                <span class="tag">AI Framework</span>
+            </div>
+        </div>
+
+        <div class="card hot">
+            <span class="rank">2</span>
+            <a href="https://github.com/KillianLucas/open-interpreter" class="title">open-interpreter</a>
+            <p class="desc">Let LLMs run code on your computer</p>
+            <div class="meta">
+                <span class="stars">⭐ 55,000</span>
+                <span class="lang-python">Python</span>
+                <span class="tag">Automation</span>
+            </div>
+        </div>
+
+        <div class="card hot">
+            <span class="rank">3</span>
+            <a href="https://github.com/cline/cline" class="title">cline</a>
+            <p class="desc">Autonomous coding agent for VS Code</p>
+            <div class="meta">
+                <span class="stars">⭐ 50,000</span>
+                <span class="lang-typescript">TypeScript</span>
+                <span class="tag">AI Coding</span>
+            </div>
+        </div>
+
+        <div class="card hot">
+            <span class="rank">4</span>
+            <a href="https://github.com/joaomdmoura/crewAI" class="title">crewAI</a>
+            <p class="desc">Multi-agent orchestration framework</p>
+            <div class="meta">
+                <span class="stars">⭐ 32,000</span>
+                <span class="lang-python">Python</span>
+                <span class="tag">Multi-Agent</span>
+            </div>
+        </div>
+
+        <div class="card hot">
+            <span class="rank">5</span>
+            <a href="https://github.com/reworkd/AgentGPT" class="title">AgentGPT</a>
+            <p class="desc">Autonomous AI agents in browser</p>
+            <div class="meta">
+                <span class="stars">⭐ 31,000</span>
+                <span class="lang-typescript">TypeScript</span>
+                <span class="tag">Browser Agent</span>
+            </div>
+        </div>
+
+        <div class="card ">
+            <span class="rank">6</span>
+            <a href="https://github.com/microsoft/semantic-kernel" class="title">semantic-kernel</a>
+            <p class="desc">Enterprise LLM SDK</p>
+            <div class="meta">
+                <span class="stars">⭐ 21,500</span>
+                <span class="lang-cpp">C#</span>
+                <span class="tag">Enterprise</span>
+            </div>
+        </div>
+
+        <div class="card ">
+            <span class="rank">7</span>
+            <a href="https://github.com/continuedev/continue" class="title">continue</a>
+            <p class="desc">Open-source AI IDE extension</p>
+            <div class="meta">
+                <span class="stars">⭐ 20,000</span>
+                <span class="lang-typescript">TypeScript</span>
+                <span class="tag">IDE Plugin</span>
+            </div>
+        </div>
+
+        <div class="card ">
+            <span class="rank">8</span>
+            <a href="https://github.com/yoheinakajima/babyagi" class="title">babyagi</a>
+            <p class="desc">Task-driven autonomous agent</p>
+            <div class="meta">
+                <span class="stars">⭐ 20,000</span>
+                <span class="lang-python">Python</span>
+                <span class="tag">AI Agent</span>
+            </div>
+        </div>
+
+        <div class="card ">
+            <span class="rank">9</span>
+            <a href="https://github.com/assafelovic/gpt-researcher" class="title">gpt-researcher</a>
+            <p class="desc">Autonomous research agent</p>
+            <div class="meta">
+                <span class="stars">⭐ 14,000</span>
+                <span class="lang-python">Python</span>
+                <span class="tag">Research</span>
+            </div>
+        </div>
+
+        <div class="card ">
+            <span class="rank">10</span>
+            <a href="https://github.com/codeium/windsurf" class="title">windsurf</a>
+            <p class="desc">First agentic IDE</p>
+            <div class="meta">
+                <span class="stars">⭐ 12,000</span>
+                <span class="lang-typescript">TypeScript</span>
+                <span class="tag">AI IDE</span>
+            </div>
+        </div>
+
+    <footer>
+        <p>GitHub Trending Skills Daily | 更新于 2026-02-04</p>
+        <p>数据来源: <a href="https://github.com/trending">GitHub Trending</a></p>
+    </footer>
 </body>
 </html>

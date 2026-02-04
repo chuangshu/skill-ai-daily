@@ -1,25 +1,23 @@
-# Reddit AI 情报日报
+# 📚 GitHub Trending Skills 每日趋势
 
-自动抓取 Reddit AI 热门讨论，生成每日情报日报。
+每日精选 GitHub 上最热门的 AI/Automation/Development Skills 和项目。
 
-## 功能
+**🔗 在线阅读**: https://chuangshu.github.io/reddit-ai-daily/
 
-- 🤖 监控 Reddit AI 热门社区（r/artificial, r/MachineLearning, r/OpenAI）
-- 📊 筛选高热度、高价值帖子
-- 📰 生成每日情报日报
-- 🌐 GitHub Pages 自动发布
+**📊 数据来源**: GitHub Trending API + Awesome Lists
 
-## 定时任务
+## 📋 分类
 
-```bash
-# 每天 9:00, 13:00, 21:00 自动更新
-0 9,13,21 * * * cd /root/clawd/reddit-ai && ./scripts/fetch_all.sh >> logs/fetch.log 2>&1
-```
+- 🤖 AI Agents（自主代理）
+- 🔧 Development Tools（开发工具）
+- ⚡ Automation（自动化）
+- 🧠 LLM Frameworks（LLM 框架）
+- 📦 Libraries & SDKs（库和 SDK）
 
-## 仓库地址
+## 🗂️ 历史存档
 
-https://github.com/chuangshu/reddit-ai-daily
+- [2026-02-04](daily/2026-02-04.html)
 
-## 发布地址
+## 🤝 贡献
 
-https://chuangshu.github.io/reddit-ai-daily/
+欢迎推荐热门项目！提 Issue 或 PR 即可。
