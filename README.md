@@ -1,17 +1,25 @@
 # Reddit AI 情报日报
 
-## 部署方法
+自动抓取 Reddit AI 热门讨论，生成每日情报日报。
 
-1. Fork 本仓库
-2. 开启 GitHub Pages（Settings → Pages → main branch）
-3. 配置定时任务抓取数据
+## 功能
+
+- 🤖 监控 Reddit AI 热门社区（r/artificial, r/MachineLearning, r/OpenAI）
+- 📊 筛选高热度、高价值帖子
+- 📰 生成每日情报日报
+- 🌐 GitHub Pages 自动发布
 
 ## 定时任务
 
 ```bash
-0 9 * * * cd /root/clawd/reddit-ai && ./scripts/fetch_all.sh >> logs/fetch.log 2>&1
+# 每天 9:00, 13:00, 21:00 自动更新
+0 9,13,21 * * * cd /root/clawd/reddit-ai && ./scripts/fetch_all.sh >> logs/fetch.log 2>&1
 ```
 
-## 贡献者
+## 仓库地址
 
-基于 nutllwhy/reddit-AI 改造
+https://github.com/chuangshu/reddit-ai-daily
+
+## 发布地址
+
+https://chuangshu.github.io/reddit-ai-daily/
