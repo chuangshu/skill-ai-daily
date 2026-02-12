@@ -33,6 +33,23 @@ jobs:
         run: |
           python scripts/fetch_trending.py
 
+      - name: Prepare for Pages
+        run: |
+          mkdir -p dist
+          # Find latest daily report and copy to dist
+          LATEST=$(ls -t daily/*.html | head -1)
+          if [ -n "$LATEST" ]; then
+            cp "$LATEST" dist/index.html
+            echo "Latest report: $LATEST"
+          else
+            echo "No daily report found"
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"

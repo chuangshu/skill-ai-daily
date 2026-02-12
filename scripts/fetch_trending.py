@@ -4,7 +4,7 @@
 from datetime import datetime
 
 DATE = datetime.now().strftime('%Y-%m-%d')
-OUTPUT_FILE = f'/root/clawd/reddit-ai/daily/{DATE}.html'
+OUTPUT_FILE = f'daily/{DATE}.html'
 
 TRENDING_REPOS = [
     {"name": "langchain-ai/langchain", "stars": 99000, "desc": "Building applications with LLMs through composability", "lang": "Python", "tags": ["AI Framework"]},
